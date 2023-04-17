@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ListDetail :data="testList"></ListDetail>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListDetail from './components/ListDetail.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      testList: [
+        { title: '标题一', detail: '标题一详情' },
+        { title: '标题二', detail: '标题二详情' },
+        { title: '标题三', detail: '标题三详情' },
+        { title: '标题四', detail: '标题四详情' }
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    ListDetail
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  padding: 0;
+  margin: 0;
 }
 </style>
